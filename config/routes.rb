@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  namespace :adimin do
+  namespace :admins do
+    get "/top" => "homes#top", as: "top"
   end
   
     devise_for :admins, controllers: {
