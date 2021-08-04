@@ -13,5 +13,45 @@
  *= require_tree .
  *= require_self
  */
- 
+
  @import "bootstrap";
+
+ .top-heading{
+  background-image: url("top1.jpg");
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+ }
+
+ .about-box{
+   background-image: url("about.jpg");
+   height: 300px;
+   background-size: cover;
+   background-position: bottom;
+   opacity: 0.8;
+ }
+
+ .leaning-box{
+  background-image: url("leaning.jpg");
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+ }
+
+ .communicate-box{
+  background-image: url("communicate.jpg");
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+ }
+
+ .opinion-box{
+  background-image: url("opinion.jpg");
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+ }
