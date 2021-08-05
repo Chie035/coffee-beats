@@ -1,0 +1,24 @@
+<div class="container sm-12 md-8 lg-5 px-5px-sm-0">
+
+  <div class="row mt-5">
+
+    <div class="article-box">
+        <h2 class="mb-3"><%= @article.title %></h2>
+
+        <%= attachment_image_tag @article, :image, :fill, 800, 500 %>
+
+        <p><%= @article.body %></p>
+
+        <div class="link-btn">
+          <a class="btn btn-danger" href="#">削除</a>
+        </div>
+    </div>
+
+  </div>
+  <div class="row mt-5">
+    <div class="link-btn mx-auto">
+      <%= link_to "TOPに戻る", admins_top_path, class:"btn btn-primary" %>
+    </div>
+  </div>
+
+</div>
