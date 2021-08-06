@@ -10,7 +10,8 @@
         <p><%= @article.body %></p>
 
         <div class="link-btn">
-          <a class="btn btn-danger" href="#">削除</a>
+          <%= link_to "編集", edit_admins_article_path(@article.id), class:"btn btn-success" %>
+          <%= link_to "削除", admins_article_path(@article.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class:"btn btn-danger" %>
         </div>
     </div>
 
