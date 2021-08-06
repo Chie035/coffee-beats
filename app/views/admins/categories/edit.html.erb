@@ -1,2 +1,15 @@
-<h1>Admins::Categories#edit</h1>
-<p>Find me in app/views/admins/categories/edit.html.erb</p>
+<div class="container">
+
+  <div class="row mt-5">
+    <div class="edit-category-form">
+      <%= form_with model: @category, url: admins_category_path(@category.id), local:true do |f| %>
+        <div class="form-group">
+          <%= f.label :name, "カテゴリー名", class:"d-inline-block" %>
+          <%= f.text_field :name, class:"d-inline-block ml-3" %>
+          <%= f.submit "更新する", class:"btn btn-success d-inline-block ml-4" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>

@@ -9,6 +9,9 @@
 
         <p><%= @article.body %></p>
 
+        <p class="d-inline-block mt-3">カテゴリー：<%= @article.category.name%></p>
+        <p class="d-inline-block ml-3">更新日：<%= @article.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+
         <div class="link-btn">
           <%= link_to "編集", edit_admins_article_path(@article.id), class:"btn btn-success" %>
           <%= link_to "削除", admins_article_path(@article.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class:"btn btn-danger" %>
