@@ -12,24 +12,16 @@
 
     <div class="row mt-5">
         <div class="contents-box mx-auto flex">
-
                 <div class="leaning-box d-inline-block">
-                    <div class="mt-5 text-light text-center">
-                        <h4>Leaning</h4>
-                        <p class="mt-2">#コーヒーについて知ろう！</p>
-                    </div>
+                    <%= link_to articles_path do%>
+                    <%= image_tag("leaning.jpg") %>
+                    <% end %>
                 </div>
                 <div class="communicate-box d-inline-block ml-3">
-                    <div class="mt-5 text-light text-center">
-                        <h4>Communicate</h4>
-                        <p>#コーヒー仲間とつながろう。</p>
-                    </div>
+                    <a href="#"><%= image_tag("communicate.jpg") %></a>
                 </div>
                 <div class="opinion-box d-inline-block ml-3">
-                    <div class="mt-5 text-light text-center">
-                        <h4>Opinion</h4>
-                        <p>#自分にあったコーヒーを探そう。</p>
-                    </div>
+                    <a href="#"><%= image_tag("opinion.jpg") %></a>
                 </div>
 
         </div>
