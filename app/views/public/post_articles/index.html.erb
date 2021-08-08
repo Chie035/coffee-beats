@@ -1,0 +1,45 @@
+<div class="container">
+
+  <div class="row">
+    <div class="new-post-box col-md-10 shadow-sm mt-5 mx-auto">
+      <%= form_with model: @post_article, url: post_articles_path, local:true do |f| %>
+        <div class="form-group">
+          <%= f.text_area :body, class:"form-control" %>
+        </div>
+        <div class="form-group d-inline-block">
+          <%= f.attachment_field :image %>
+        </div>
+        <div class="action d-inline-block ml-auto">
+          <%= f.submit "新規投稿", class:"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <% @post_articles.each do |post_article| %>
+      <div class="post_article-box col-md-10 mt-3 mx-auto shadow-sm">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td width="75">
+                <%= image_tag("no_image.jpg") %><br />
+                <%= post_article.user.name %>
+              </td>
+              <td>
+                <%= post_article.body.truncate(24) %>
+              </td>
+              <td>
+                <%= post_article.image %>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

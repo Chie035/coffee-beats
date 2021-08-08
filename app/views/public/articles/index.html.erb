@@ -23,7 +23,7 @@
         <tbody>
           <tr>
             <% @articles.each do |article| %>
-              <td><%= article %></td>
+              <td><%= article.id %></td>
               <td><%= article.title %></td>
               <td><%= article.category.name %></td>
               <td>
