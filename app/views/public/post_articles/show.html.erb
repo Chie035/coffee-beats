@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="row mt-5">
+
+    <div class="sidebar col-md-3 mx-auto">
+      <div class="row">
+        <%= image_tag("no_image.jpg") %>
+      </div>
+      <div class="row">
+        <%= @post_article.user.name %>
+      </div>
+      <div class="row">
+        <p class="border-bottom">Introduntion</p>
+        <%= @post_article.user.introduction %>
+      </div>
+      <div class="row">
+
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="row">
+        <%= attachment_image_tag @post_article, :image, :fill, 300, 200 %>
+        <%= @post_article.body %>
+      </div>
+      <div class="row">
+        <div class="count-box"></div>
+      </div>
+    </div>
+  </div>
+</div>

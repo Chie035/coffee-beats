@@ -1,7 +1,7 @@
 class Public::PostArticlesController < ApplicationController
 
   def index
-    @post_articles = PostArticle.all
+    @post_articles = PostArticle.all.reverse_order
     @post_article = PostArticle.new
   end
 
@@ -14,6 +14,7 @@ class Public::PostArticlesController < ApplicationController
   end
 
   def show
+    @post_article = PostArticle.find(params[:id])
   end
 
   def destroy
