@@ -2,30 +2,36 @@
 
   <div class="row mt-5">
 
-    <div class="sidebar col-md-3 mx-auto">
+    <div class="sidebar col-md-3">
       <div class="row">
-        <%= image_tag("no_image.jpg") %>
+        <div class="ml-3"><%= image_tag("no_image.jpg") %></div>
       </div>
       <div class="row">
-        <%= @post_article.user.name %>
+        <h5 class="ml-3">
+           <%= link_to user_path(name: params[:name]) do %>
+           <%= @post_article.user.name %><% end %></h5>
       </div>
       <div class="row">
-        <p class="border-bottom">Introduntion</p>
-        <%= @post_article.user.introduction %>
+        <p class="ml-3 border-bottom">Introduntion</p>
+        <p class="ml-3"><%= @post_article.user.introduction %></p>
       </div>
-      <div class="row">
 
-      </div>
     </div>
 
     <div class="col-md-9">
       <div class="row">
-        <%= attachment_image_tag @post_article, :image, :fill, 300, 200 %>
-        <%= @post_article.body %>
+        <%= attachment_image_tag @post_article, :image, :fill, 400, 270 %>
+        <p class="ml-3"><%= @post_article.body %></p>
       </div>
-      <div class="row">
-        <div class="count-box"></div>
+
+      <div class="row mt-5">
+        <div class="count-box ml-auto mr-5">
+          <p class="border"><%= @post_article.post_comments.count %>コメント</p>
+        </div>
       </div>
+
+
+
     </div>
   </div>
 </div>

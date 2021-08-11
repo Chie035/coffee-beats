@@ -14,6 +14,6 @@ class User < ApplicationRecord
       uniqueness: true
 
   def to_param
-    return self.name
+    name
   end
 end

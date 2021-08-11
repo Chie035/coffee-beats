@@ -19,7 +19,8 @@
   <div class="row">
     <% @post_articles.each do |post_article| %>
       <div class="post_article-box col-md-10 mt-3 mx-auto shadow-sm">
-        <%= link_to post_article_path(post_article.id) do %>
+        <% user = User.find(post_article.user_id) %>
+        <%= link_to post_article_path(post_article.id, name:user.name) do %>
           <table class="table">
             <tbody>
               <tr>

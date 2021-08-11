@@ -25,8 +25,8 @@ Rails.application.routes.draw do
     get "/about" => "homes#about", as: "about"
 
     resources :articles, only:[:index, :show]
-    resources :users, param: :name, path: "/", only:[:show, :edit, :update] do
-      collection do
+    resources :users, param: :name, only:[:show, :edit, :update] do
+     collection do
         get :resign
         patch :withdraw
       end

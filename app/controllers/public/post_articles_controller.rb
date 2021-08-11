@@ -3,6 +3,7 @@ class Public::PostArticlesController < ApplicationController
   def index
     @post_articles = PostArticle.all.reverse_order
     @post_article = PostArticle.new
+    @post_comment = PostComment.new
   end
 
   def create
@@ -14,7 +15,9 @@ class Public::PostArticlesController < ApplicationController
   end
 
   def show
+    #params[:name] = params[:format]
     @post_article = PostArticle.find(params[:id])
+    ## @user = User.find_by(name: params[:name])
   end
 
   def destroy
