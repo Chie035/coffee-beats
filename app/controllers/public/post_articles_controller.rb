@@ -15,9 +15,8 @@ class Public::PostArticlesController < ApplicationController
   end
 
   def show
-    #params[:name] = params[:format]
     @post_article = PostArticle.find(params[:id])
-    ## @user = User.find_by(name: params[:name])
+    @post_comment = PostComment.new
   end
 
   def destroy

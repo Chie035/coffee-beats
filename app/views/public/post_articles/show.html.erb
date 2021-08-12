@@ -4,11 +4,11 @@
 
     <div class="sidebar col-md-3">
       <div class="row">
-        <div class="ml-3"><%= image_tag("no_image.jpg") %></div>
+        <div class="ml-3"><%= attachment_image_tag @post_article.user, :profile_image, :fill, 150, 150, fallback:"no_image.jpg" %></div>
       </div>
       <div class="row">
         <h5 class="ml-3">
-           <%= link_to user_path(name: params[:name]) do %>
+           <%= link_to user_path(@post_article.user.id) do %>
            <%= @post_article.user.name %><% end %></h5>
       </div>
       <div class="row">
@@ -26,10 +26,60 @@
 
       <div class="row mt-5">
         <div class="count-box ml-auto mr-5">
-          <p class="border"><%= @post_article.post_comments.count %>コメント</p>
+
+           <% if @post_article.favorited_by?(current_user) %>
+            <p class="border d-inline-block"><%= link_to post_article_favorites_path(@post_article), method: :delete do %>
+              ♡<%= @post_article.favorites.count %>いいね
+               <% end %>
+            </p>
+          <% else %>
+            <p class="border d-inline-block ml-2"><%= link_to post_article_favorites_path(@post_article), method: :post do %>
+              ♡<%= @post_article.favorites.count %>いいね
+               <% end %>
+            </p>
+          <% end %>
+
+            <p class="border d-inline-block"><%= @post_article.post_comments.count %>コメント</p>
         </div>
       </div>
 
+      <div class="row">
+        <div class="new-comment-box col-md-10">
+          <%= form_with(model: [@post_article, @post_comment], local:true) do |f| %>
+            <%= f.text_area :comment, rows:"5", placeholder:"コメントをここに", class:"form-control" %>
+            <%= f.submit "コメント投稿", class:"btn btn-success mt-3" %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="comment-box col-md-10 shadow-sm">
+          <table class="table">
+            <tbody>
+              <tr>
+                <% @post_article.post_comments.each do |post_comment| %>
+                  <td>
+                    <%= image_tag("no_image.jpg") %><br />
+                    <%= post_comment.user.name %>
+                  </td>
+                  <td>
+                    <%= post_comment.comment %>
+                  </td>
+                  <td align="right">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <% if post_comment.user == current_user %>
+                    <%= link_to "削除", post_article_post_comment_path(post_comment.post_article, post_comment), method: :delete, class:"btn btn-danger" %>
+                    <% end %><br/>
+                    <%= post_comment.created_at.strftime("%Y/%m/%d %H:%M") %>
+                  </td>
+              </tr>
+                <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
 
     </div>

@@ -25,7 +25,7 @@
             <tbody>
               <tr>
                 <td width="75">
-                  <%= image_tag("no_image.jpg") %><br />
+                  <%= attachment_image_tag post_article.user, :profile_image, :fill, 100, 100, fallback:"no_image.jpg" %><br />
                   <%= post_article.user.name %>
                 </td>
                 <td width="550">

@@ -1,7 +1,7 @@
 class Public::UsersController < ApplicationController
 
   def show
-    @user = User.find_by(name: params[:name])
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -11,9 +11,11 @@ class Public::UsersController < ApplicationController
   end
 
   def resign
+    @user = current_user
   end
 
   def withdraw
+    @user = current_user
   end
 
 end
