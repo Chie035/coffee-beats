@@ -16,9 +16,11 @@
           <a class="nav-brand py-2" href="/"><%= image_tag("logo.png") %></a>
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-                <li>Leaning</li>
                 <li>
-                  <%= link_to "Communicate", post_articles_path, class:"nav-link" %>
+                  <%= link_to "Leaning", articles_path, class:"nav-link" %>
+                </li>
+                <li>
+                  <%= link_to "Communicate(会員制）", post_articles_path, class:"nav-link" %>
                 </li>
                 <li>Opinion</li>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link" %>

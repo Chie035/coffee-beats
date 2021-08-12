@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :name,
       uniqueness: true
 
-  def to_param
-    name
-  end
+ #def to_param
+  #  name
+  #end
 end

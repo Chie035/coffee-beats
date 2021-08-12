@@ -2,23 +2,27 @@
 
   <div class="row mt-5">
 
-    <div class="sidebar col-md-3">
+    <div class="sidebar col-md-2">
       <div class="row">
-        <div class="ml-3"><%= attachment_image_tag @post_article.user, :profile_image, :fill, 150, 150, fallback:"no_image.jpg" %></div>
+        <div class="ml-3 mx-auto"><%= attachment_image_tag @post_article.user, :profile_image, :fill, 150, 150, fallback:"no_image.jpg" %></div>
       </div>
       <div class="row">
-        <h5 class="ml-3">
+        <h5 class="ml-3 mx-auto">
            <%= link_to user_path(@post_article.user.id) do %>
            <%= @post_article.user.name %><% end %></h5>
       </div>
       <div class="row">
-        <p class="ml-3 border-bottom">Introduntion</p>
-        <p class="ml-3"><%= @post_article.user.introduction %></p>
+        <p class="ml-3 border-bottom mx-auto">Introduntion</p>
+        <p class="ml-3 mx-auto"><%= @post_article.user.introduction %></p>
+      </div>
+
+      <div class="row">
+        <%= link_to "一覧へ戻る", post_articles_path, class:"btn btn-info mx-auto" %>
       </div>
 
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-9 offset-1">
       <div class="row">
         <%= attachment_image_tag @post_article, :image, :fill, 400, 270 %>
         <p class="ml-3"><%= @post_article.body %></p>
@@ -59,7 +63,7 @@
               <tr>
                 <% @post_article.post_comments.each do |post_comment| %>
                   <td>
-                    <%= image_tag("no_image.jpg") %><br />
+                    <%= attachment_image_tag post_comment.user, :profile_image, :fill, 100, 100, fallback:"no_image.jpg" %><br />
                     <%= post_comment.user.name %>
                   </td>
                   <td>

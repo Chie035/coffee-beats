@@ -18,7 +18,9 @@
                     <% end %>
                 </div>
                 <div class="communicate-box d-inline-block ml-3">
-                    <a href="#"><%= image_tag("communicate.jpg") %></a>
+                    <%= link_to post_articles_path do %>
+                    <%= image_tag("communicate.jpg") %>
+                    <% end %>
                 </div>
                 <div class="opinion-box d-inline-block ml-3">
                     <a href="#"><%= image_tag("opinion.jpg") %></a>

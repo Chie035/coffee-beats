@@ -1,0 +1,33 @@
+<div class="container px-5">
+
+  <div class="row mt-5">
+    <h3 >新規登録</h3>
+  </div>
+
+  <div class="row mt-3">
+      <%= form_with model: @user, url: user_path(@user.id), local:true do |f| %>
+        <div class="form-group">
+          <%= f.label :profile_image, "プロフィール画像" %><br />
+          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :name, "ユーザーネーム" %><br />
+          <%= f.text_field :name, autofocus: true, class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :introduction, "自己紹介" %>
+          <%= f.text_area :introduction, autofocus: true, placeholder:"自己紹介を入力", class:"form-control" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "更新する", class:"btn btn-success" %>
+        </div>
+      <% end %>
+  </div>
