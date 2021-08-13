@@ -1,2 +1,36 @@
-<h1>Admins::PostArticles#show</h1>
-<p>Find me in app/views/admins/post_articles/show.html.erb</p>
+<div class="container">
+
+  <div class="row mt-5">
+    <div class="sidebar col-md-2">
+      <div class="row">
+        <div class="ml-3 mx-auto"><%= attachment_image_tag @post_article.user, :profile_image, :fill, 150, 150, fallback:"no_image.jpg" %></div>
+      </div>
+
+      <div class="row">
+        <h5 class="ml-3 mx-auto">
+           <%= link_to user_path(@post_article.user.id) do %>
+           <%= @post_article.user.name %><% end %></h5>
+      </div>
+      <div class="row">
+        <p class="ml-3 border-bottom mx-auto">Introduntion</p>
+        <p class="ml-3 mx-auto"><%= @post_article.user.introduction %></p>
+      </div>
+      <div class="row">
+        <%= link_to "一覧へ戻る", admins_post_articles_path, class:"btn btn-info mx-auto" %>
+      </div>
+    </div>
+
+    <div class="col-md-9 offset-1">
+      <div class="row">
+        <%= attachment_image_tag @post_article, :image, :fill, 400, 270 %>
+        <p class="ml-3"><%= @post_article.body %></p>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-9 offset-1 mx-auto">
+          <%= link_to "この記事を削除する", admins_post_article_path(@post_article.id), method: :delete, class:"btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

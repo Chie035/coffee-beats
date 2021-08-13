@@ -1,2 +1,32 @@
-<h1>Admins::PostArticles#index</h1>
-<p>Find me in app/views/admins/post_articles/index.html.erb</p>
+<div class="container sm-12 md-8 lg-5 px-5 px-sm-0">
+
+  <div class="row mt-5">
+    <h4>Communicate 記事一覧</h4>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-8 mx-auto">
+      <table class="table">
+        <thead>
+          <tr class="table-active">
+            <th>投稿者</th>
+            <th>本文</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @post_articles.each do |post_article| %>
+            <tr>
+              <td><%= post_article.user.name %></td>
+              <td><%= post_article.body.truncate(10) %></td>
+              <td>
+                <%= link_to "詳細", admins_post_article_path(post_article.id), class:"btn btn-primary" %>
+                <%= link_to "削除", admins_post_article_path(post_article.id), method: :delete, data: {confirm: "本当に削除しますか？"},  class:"btn btn-danger" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
