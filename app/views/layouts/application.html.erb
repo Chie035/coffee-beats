@@ -35,7 +35,9 @@
                 <li>
                   <%= link_to "Communicate", admins_post_articles_path, class:"nav-link" %>
                 </li>
-                <li>Opinion</li>
+                <li>
+                  <%= link_to "Opinion", admins_questions_path, class:"nav-link" %>
+                </li>
                 <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"nav-link" %>
 
               <% else %>
