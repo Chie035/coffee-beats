@@ -18,7 +18,11 @@
           <tr>
             <% @users.each do |user| %>
                 <td width="100"><%= user.id %></td>
-                <td><%= user.name %></td>
+                <td>
+                  <%= link_to admins_user_path(user.id) do %>
+                    <%= user.name %>
+                  <% end %>
+                </td>
               <% if user.is_active == true %>
                 <td class="text-success">有効</td>
               <% else %>

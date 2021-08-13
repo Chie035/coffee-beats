@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
     resources :articles
     resources :categories, only:[:index, :create, :edit, :update]
-    resources :users, only:[:index, :show, :edit, :update]
+    resources :users, only:[:index, :show, :update]
     resources :post_articles, only:[:index,:create, :show, :destroy]
     resources :questions, only:[:index, :create, :edit, :update, :destroy]
   end
