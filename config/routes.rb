@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :public do
+    get 'questions/index'
+    get 'questions/show'
+  end
+  get 'questions/index'
+  get 'questions/show'
   namespace :admins do
 
   end
@@ -10,7 +16,7 @@ Rails.application.routes.draw do
     resources :categories, only:[:index, :create, :edit, :update]
     resources :users, only:[:index, :show, :update]
     resources :post_articles, only:[:index,:create, :show, :destroy]
-    resources :questions, only:[:index, :create, :edit, :update, :destroy]
+    resources :questions, only:[:index, :create, :edit, :update]
   end
 
     devise_for :admins, controllers: {
@@ -35,6 +41,11 @@ Rails.application.routes.draw do
     resources :post_articles, only:[:index, :create, :show, :destroy] do
       resource :favorites, only:[:create, :destroy ]
       resources :post_comments, only:[:create, :destroy]
+    end
+    resources :questions, only:[:index, :show, :create] do
+      collection do
+        get :start
+      end
     end
 
   end

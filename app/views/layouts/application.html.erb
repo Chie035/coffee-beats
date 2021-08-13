@@ -22,7 +22,9 @@
                 <li>
                   <%= link_to "Communicate(会員制）", post_articles_path, class:"nav-link" %>
                 </li>
-                <li>Opinion</li>
+                <li>
+                  <%= link_to "Opinion", start_questions_path, class:"nav-link" %>
+                </li>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"nav-link" %>
 
               <% elsif admin_signed_in? %>
