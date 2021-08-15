@@ -23,7 +23,9 @@
                     <% end %>
                 </div>
                 <div class="opinion-box d-inline-block ml-3">
-                    <a href="#"><%= image_tag("opinion.jpg") %></a>
+                    <%= link_to start_questions_path do %>
+                    <%= image_tag("opinion.jpg") %>
+                    <% end %>
                 </div>
 
         </div>

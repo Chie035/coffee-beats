@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     get "/about" => "homes#about", as: "about"
 
     resources :articles, only:[:index, :show]
-    resources :users, #param: :name, 
+    resources :users, #param: :name,
       only:[:show, :edit, :update] do
         collection do
         get :resign
@@ -42,9 +42,11 @@ Rails.application.routes.draw do
       resource :favorites, only:[:create, :destroy ]
       resources :post_comments, only:[:create, :destroy]
     end
-    resources :questions, only:[:index, :show, :create] do
+    resources :questions, only:[:show, :update] do
       collection do
         get :start
+        get :goal_1
+        get :goal_2
       end
     end
 

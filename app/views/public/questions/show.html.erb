@@ -2,12 +2,38 @@
   <div class="row mt-5">
     <h4><strong>Question:</strong></h4>
   </div>
-  
+
   <div class="row mt-3">
     <p class="mx-auto">
       <%= @question.question %>
     </p>
   </div>
-  
-  
+
+  <div class="row-mt-3">
+    <div class="answer-box">
+      <%= form_with model: @question, url: question_path(@question.id), local:true do |f| %>
+        <div class="form-group">
+          <%= f.radio_button :is_answer, :true %>
+          <%= f.label :is_answer_true, "yes" %>
+          <%= f.radio_button :is_answer, :false %>
+          <%= f.label :is_answer_false, "no" %>
+        </div>
+
+        <% if @question.id == 4 %>
+          <div class="action mt-3">
+            <%= f.submit "Result", class:"btn btn-info" %>
+          </div>
+        <% elsif @question.id == 5 %>
+          <div class="action mt-3">
+            <%= f.submit "Result", class:"btn btn-info" %>
+          </div>
+        <% else %>
+        <div class="action mt-3">
+          <%= f.submit "Next", class:"btn btn-success" %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
 </div>
