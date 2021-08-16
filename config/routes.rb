@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :users, only:[:index, :show, :update]
     resources :post_articles, only:[:index,:create, :show, :destroy]
     resources :questions, only:[:index, :create, :edit, :update]
+    resources :results, only:[:index, :new, :create, :show, :edit, :update]
   end
 
     devise_for :admins, controllers: {
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
         get :goal_2
       end
     end
+    resources :results, only:[:index, :show]
 
   end
 

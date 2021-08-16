@@ -1,9 +1,10 @@
 <div class="container">
-  
+
   <div class="row mt-5">
     <h4>Opinion質問一覧</h4>
+    <%= link_to "診断結果一覧", admins_results_path, class:"btn btn-primary ml-5" %>
   </div>
-  
+
   <div class="row mt-3">
     <div class="questions-box">
       <table class="table">
@@ -26,7 +27,7 @@
       </table>
     </div>
   </div>
-  
+
   <div class="row mt-3">
     <div class="new-question-box">
       <%= form_with model: @question, url: admins_questions_path, local:true do |f| %>

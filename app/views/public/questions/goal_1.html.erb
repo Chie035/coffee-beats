@@ -13,12 +13,21 @@
   </div>
 
   <div class="row mt-3">
+    <div class="type-detail">
+      <p>このタイプの詳細はこちら</p>
+      <% if @result.is_answer == true %>
+        <a>Click here!</a>
+      <% else %>
+        <a>Click here!</a>
+      <% end %>
+    </div>
+    
     <div class="link-btn">
       <p>そのほかのタイプを
         <a href="#">みる。</a>
       </p>
 
-      <%= link_to "もう一度", start_questions_path, class:"btn btn-success" %>
+      <%= link_to "もう一度", start_questions_path, class:"btn btn-info" %>
     </div>
   </div>
 
