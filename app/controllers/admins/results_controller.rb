@@ -16,12 +16,18 @@ class Admins::ResultsController < ApplicationController
   end
 
   def show
+    @result = Result.find(params[:id])
   end
 
   def edit
+    @result = Result.find(params[:id])
   end
 
   def update
+    @result = Result.find(params[:id])
+    @result.update(result_params)
+    
+    redirect_to admins_result_path(@result)
   end
 
   private

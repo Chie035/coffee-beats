@@ -1,5 +1,5 @@
 class Public::PostArticlesController < ApplicationController
-
+  before_action :authenticate_user!
 
   def index
     @post_articles = PostArticle.all.reverse_order

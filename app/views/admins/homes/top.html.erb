@@ -23,8 +23,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <% @articles.each do |article| %>
-                            <td><%= article.id %></td>
+                        <% @articles.each_with_index do |article, i| %>
+                            <td><%= i + 1 %></td>
                             <td>
                                 <%= link_to admins_article_path(article.id) do %>
                                 <%= article.title %>

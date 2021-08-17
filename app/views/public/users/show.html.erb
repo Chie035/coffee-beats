@@ -1,12 +1,25 @@
 <div class="container sm-12 md-8 lg-5 px-5 px-sm-0">
 
   <div class="row mt-5">
+
     <div class="col-md-4">
       <div class="row">
         <%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback:"no_image.jpg", class:"mx-auto" %>
       </div>
       <div class="row mt-3">
-        <%= link_to "Communicateへもどる", post_articles_path, class:"btn btn-info mx-auto" %>
+          <% if @user.id == current_user.id %>
+              <%= link_to "フォロー", user_followings_path(@user.id), class:"btn btn-primary mx-auto" %>
+              <%= link_to "フォロワー", user_followers_path(@user.id), class:"btn btn-info mx-auto" %>
+          <% else %>
+                <% if current_user.following?(@user) %>
+                    <%= link_to "Unfollow", user_relationships_path(@user), method: :delete, class:"btn btn-danger mx-auto" %>
+                <% else %>
+                    <%= link_to "Follow", user_relationships_path(@user), method: :post, class:"btn btn-success mx-auto" %>
+                <% end %>
+          <% end %>
+      </div>
+      <div class="row mt-5">
+        <%= link_to "Communicateへもどる", post_articles_path, class:"btn btn-success mx-auto" %>
       </div>
     </div>
 

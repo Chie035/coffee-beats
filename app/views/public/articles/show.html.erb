@@ -5,9 +5,11 @@
 
             <h2 class="mb-3"><%= @article.title %></h2>
             <%= attachment_image_tag @article, :image, :fill, 800, 500 %>
-            <p><%= @article.body %></p>
+         <div class="col-md-11 mt-3">
+            <p><%= simple_format(@article.body) %></p>
+         </div>
             <p class="d-inline-block mt-3">カテゴリー：<%= @article.category.name%></p>
-            <p class="d-inline-block ml-3">更新日：<%= @article.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+            <p class="d-inline-block ml-3">更新日：<%= @article.updated_at.strftime("%Y/%m/%d %H:%M") %></p>
 
         </div>
     </div>

@@ -20,7 +20,7 @@
             <% @results.each do |result| %>
             <td><%= result.id %></td>
             <td><%= result.result_type %></td>
-            <td><%= link_to "詳細", result_path(result.id), class:"btn btn-info" %></td>
+            <td><%= link_to "詳細", admins_result_path(result.id), class:"btn btn-info" %></td>
           </tr>
             <% end %>
         </tbody>

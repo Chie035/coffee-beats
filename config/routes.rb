@@ -32,9 +32,11 @@ Rails.application.routes.draw do
     get "/about" => "homes#about", as: "about"
 
     resources :articles, only:[:index, :show]
-    resources :users, #param: :name,
-      only:[:show, :edit, :update] do
-        collection do
+    resources :users, only:[:show, :edit, :update] do
+      resource :relationships, only:[:create, :destroy]
+       get 'followings' => 'relationships#followings', as: 'followings'
+       get 'followers' => 'relationships#followers', as: 'followers'
+      collection do
         get :resign
         patch :withdraw
       end
