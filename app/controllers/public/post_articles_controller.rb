@@ -10,9 +10,18 @@ class Public::PostArticlesController < ApplicationController
   def create
     @post_article = PostArticle.new(post_article_params)
     @post_article.user_id = current_user.id
-    @post_article.save!
 
-    redirect_to post_articles_path
+    if @post_article.save
+
+      redirect_to post_articles_path
+    else
+      @post_articles = PostArticle.all.reverse_order
+      @post_article = PostArticle.new
+      @post_comment = PostComment.new
+
+      flash.now[:alert] = "Attention! 本文を入力してください"
+      render :index
+    end
   end
 
   def show

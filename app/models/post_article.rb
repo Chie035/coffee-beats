@@ -8,5 +8,7 @@ class PostArticle < ApplicationRecord
     end
   
   attachment :image
-    
+  
+  validates :body, presence: true
+  
 end

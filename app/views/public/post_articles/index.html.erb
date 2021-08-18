@@ -4,6 +4,10 @@
   </div>
 
   <div class="row">
+    <p class="text-danger mx-auto"><strong><%= flash[:alert] %></strong></p>
+  </div>
+
+  <div class="row">
     <div class="new-post-box col-md-10 shadow-sm mt-5 mx-auto">
       <%= form_with model: @post_article, url: post_articles_path, local:true do |f| %>
         <div class="form-group">
