@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div class="row mt-5">
+    <h4>Opinion質問一覧</h4>
+    <%= link_to "診断結果一覧", admins_results_path, class:"btn btn-primary ml-5" %>
+  </div>
+
+  <div class="row mt-3">
+    <div class="questions-box">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>質問</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @questions.each do |question| %>
+            <tr>
+              <td><%= question.id %></td>
+              <td><%= question.question %></td>
+              <td><%= link_to "編集", edit_admins_question_path(question.id), class:"btn btn-success" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="new-question-box">
+      <%= form_with model: @question, url: admins_questions_path, local:true do |f| %>
+        <div class="d-inline-block">
+          <%= f.text_field :question %>
+        </div>
+        <div class="d-inline-block ml-5">
+          <%= f.submit "新規投稿", class:"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

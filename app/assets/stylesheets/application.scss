@@ -1,0 +1,80 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap";
+
+ .top-heading{
+  background-image: url("top1.jpg");
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+ }
+
+ .about-box{
+   background-image: url("about.jpg");
+   height: 300px;
+   background-size: cover;
+   background-position: bottom;
+   opacity: 0.8;
+ }
+
+ .leaning-box{
+  opacity: 0.9;
+ }
+
+ .communicate-box{
+  opacity: 0.9;
+ }
+
+ .opinion-box{
+  opacity: 0.9;
+ }
+
+ .type-1{
+  background-image: url("natural.jpg");
+  height: 250px;
+  width: 200px;
+  background-size:cover;
+  background-position:center;
+  opacity: 0.8;
+ }
+
+ .type-2{
+  background-image: url("washed.jpg");
+  height: 250px;
+  width: 200px;
+  background-size:cover;
+  background-position:center;
+  opacity: 0.8;
+ }
+ .type-3{
+  background-image: url("SHB.jpg");
+  height: 250px;
+  width: 200px;
+  background-size:cover;
+  background-position:center;
+  opacity: 0.8;
+ }
+
+ .type-4{
+  background-image: url("sumatora.jpg");
+  height: 250px;
+  width: 200px;
+  background-size:cover;
+  background-position:center;
+  opacity: 0.8;
+ }

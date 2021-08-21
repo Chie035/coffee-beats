@@ -1,0 +1,31 @@
+<div class="container sm-12 md-8 lg-5 px-5 px-sm-0">
+
+  <div class="row mt-5">
+    <h4>診断結果一覧</h4>
+    <%= link_to "新規登録", new_admins_result_path, class:"btn btn-primary ml-3" %>
+  </div>
+
+  <div class="row mt-3">
+    <dvi class="results-box col-md-6">
+      <table class="table">
+        <thead>
+          <tr class="table-active">
+              <th>ID</th>
+              <th>Type</th>
+              <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @results.each do |result| %>
+            <td><%= result.id %></td>
+            <td><%= result.result_type %></td>
+            <td><%= link_to "詳細", admins_result_path(result.id), class:"btn btn-info" %></td>
+          </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </dvi>
+  </div>
+
+</div>

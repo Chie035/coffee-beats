@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row mt-5">
+    <h2 class="mx-auto">Welcome to Communicate Launge!</h2>
+  </div>
+
+  <div class="row">
+    <p class="text-danger mx-auto"><strong><%= flash[:alert] %></strong></p>
+  </div>
+
+  <div class="row">
+    <div class="new-post-box col-md-10 shadow-sm mt-5 mx-auto">
+      <%= form_with model: @post_article, url: post_articles_path, local:true do |f| %>
+        <div class="form-group">
+          <%= f.text_area :body, autofocus:true, placeholder:"さあ、コーヒーについて語り合おう！", class:"form-control" %>
+        </div>
+        <div class="form-group d-inline-block">
+          <%= f.attachment_field :image %>
+        </div>
+        <div class="action d-inline-block ml-auto">
+          <%= f.submit "新規投稿", class:"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @post_articles.each do |post_article| %>
+      <div class="post_article-box col-md-10 mt-3 mx-auto shadow-sm">
+        <% user = User.find(post_article.user_id) %>
+        <%= link_to post_article_path(post_article.id, name:user.name) do %>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td width="75">
+                  <%= attachment_image_tag post_article.user, :profile_image, :fill, 100, 100, fallback:"no_image.jpg" %><br />
+                  <%= post_article.user.name %>
+                </td>
+                <td width="550">
+                  <%= post_article.body.truncate(24) %>
+                </td>
+                <td></td>
+                <td>
+                  <%= attachment_image_tag post_article, :image, :fill, 200,150  %>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td align="right"><%= post_article.created_at.strftime("%H:%M %Y/%m/%d") %></td>
+              </tr>
+            </tbody>
+          </table>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

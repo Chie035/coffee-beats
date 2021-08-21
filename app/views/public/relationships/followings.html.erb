@@ -1,0 +1,41 @@
+<div class="container sm-12 md-8 lg-5 px-5 px-sm-0">
+
+    <div class="row mt-5">
+        <h2 class="mx-auto">Following Users</h2>
+    </div>
+
+    <div class="row mt-3">
+        <% if @users.exists? %>
+            <div class="foloow-box col-md-8  mx-auto">
+                <table class="table">
+                    <thead>
+                        <tr class="table-active">
+                            <th>ID</th>
+                            <th></th>
+                            <th>Name</th>
+                            <th colspan="2"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @users.each_with_index do |user, i| %>
+                            <tr>
+                                <td><%= i + 1 %></td>
+                                <td><%= attachment_image_tag user, :profile_image, :fill, 70, 70, fallback:"no_image.jpg" %></td>
+                                <td>
+                                    <%= link_to user_path(user) do %>
+                                    <%= user.name %>
+                                    <% end %>
+                                </td>
+                                <td>フォロー数：<%= user.followings.count %></td>
+                                <td>フォロワー数：<%= user.followers.count %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        <% else %>
+            <h5>ユーザーはいません。</h5>
+        <% end %>
+    </div>
+
+</div>
