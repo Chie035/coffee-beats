@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="row mt-5">
+    <h4>あなたは…</h4>
+  </div>
+  <div class="row">
+    <% if @result.is_answer == true %>
+      <h4><strong>アフリカ系　＃非水洗式</strong></h4>
+    <% else %>
+      <h4><strong>アフリカ系　＃水洗式</strong></h4>
+    <% end %>
+    <h4>タイプがおすすめ！</h4>
+  </div>
+
+  <div class="row mt-3">
+    <div class="type-detail">
+      <p class="d-inline-block">このタイプの詳細はこちら→</p>
+      <% if @result.is_answer == true %>
+        <a class="btn btn-success" href="/results/1">Click here!</a>
+      <% else %>
+        <a class="btn btn-success" href="/results/2">Click here!</a>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="link-btn">
+      <p>そのほかのタイプを
+        <%= link_to "みる。", results_path %>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+      <%= link_to "もう一度", start_questions_path, class:"btn btn-info mt-5" %>
+  </div>
+
+
+</div>

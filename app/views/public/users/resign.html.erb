@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row mt-5">
+
+        <div class="confirm text-center mx-auto">
+        <h2>本当に退会しますか？</h2>
+
+        <p>退会すると、</br>
+        Communicateを閲覧・使用できなくなります。</br>
+        退会する場合は、「退会する」をクリックしてください。</p>
+
+        <div class="actions d-inline mt-5">
+         <%= link_to '退会しない', user_path(@user.id), class:"btn btn-primary text-lignt" %>
+        </div>
+        <div class="actions d-inline-block ml-5 mt-5">
+         <%= link_to "退会する", withdraw_users_path, method: :patch, class:"btn btn-danger text-light" %>
+        </div>
+
+        </div>
+
+    </div>
+
+
+</div>

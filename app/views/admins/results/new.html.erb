@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="row mt-5">
+    <div class="new-results">
+      <%= form_with model: @result, url: admins_results_path, local:true do |f| %>
+        <div class="form-group">
+          <%= f.label :result_type, "タイプ" %>
+          <%= f.text_field :result_type, class:"form-control ml-3" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :type_detail, "説明文" %>
+          <%= f.text_area :type_detail, class:"form-control ml-3", size: "55x10" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :country, "代表国" %>
+          <%= f.text_field :country, class:"form-control ml-3" %>
+        </div>
+        <div class="action">
+          <%= f.submit "登録", class:"btn btn-primary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<div class="container sm-12 md-8 lg-5 px-5 px-sm-0">
+
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <div class="row">
+        <h4><strong><%= @user.name %></strong>の会員情報</h4>
+      </div>
+      <div class="row">
+        <%= attachment_image_tag @user, :profile_image, :fill, 200, 200, fallback:"no_image.jpg", class:"mx-auto" %>
+      </div>
+      <div class="row mt-3">
+        <%= link_to "一覧にもどる", admins_users_path, class:"btn btn-info mx-auto" %>
+      </div>
+    </div>
+
+    <div class-"col-md-6 offset-2">
+      <table class="table mt-5">
+        <tbody>
+          <tr>
+            <th>名前</th>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+              <th>メールアドレス</th>
+              <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <th>自己紹介</th>
+            <td><%= @user.introduction %></td>
+          </tr>
+          <tr>
+              <th>ステータス</th>
+              <% if @user.is_active == true %>
+              <td class="text-success">有効</td>
+              <% else %>
+              <td>退会</td>
+              <% end %>
+          </tr>
+          <tr>
+            <th>ステータス切替</th>
+            <td>
+              <%= form_with model: @user, url: admins_user_path(@user.id), local:true do |f| %>
+                <%= f.radio_button :is_active, :true %>
+                <%= f.label :is_active_true, "有効" %>
+                <%= f.radio_button :is_active, :false, class:"ml-3" %>
+                <%= f.label :is_active_false, "退会" %>
+                <%= f.submit "編集", class:"btn btn-success ml-3" %>
+            </td>
+              <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <h4><%= @user.name %>の投稿一覧</h4>
+  </div>
+  <div class="row mt-3">
+    <% @post_articles.each do |post_article| %>
+      <div class="post_article-box col-md-8 mt-3 ml-auto shadow-sm">
+        <% user = User.find(post_article.user_id) %>
+        <%= link_to post_article_path(post_article.id, name:user.name) do %>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td width="75">
+                  <%= attachment_image_tag post_article.user, :profile_image, :fill, 100, 100, fallback:"no_image.jpg" %><br />
+                  <%= post_article.user.name %>
+                </td>
+                <td width="550">
+                  <%= post_article.body.truncate(24) %>
+                </td>
+                <td></td>
+                <td>
+                  <%= attachment_image_tag post_article, :image, :fill, 200,150  %>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><%= link_to "記事を削除", admins_post_article_path(post_article.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class:"btn btn-danger" %></td>
+                <td align="right"><%= post_article.created_at.strftime("%H:%M %Y/%m/%d") %></td>
+              </tr>
+            </tbody>
+          </table>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
