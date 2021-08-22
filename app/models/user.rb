@@ -16,7 +16,9 @@ class User < ApplicationRecord
   attachment :profile_image
 
   validates :name,
-      uniqueness: true
+      uniqueness: true, length: { in: 2..20 }
+  validates :introduction,
+      length: { maximum: 100 }
 
  def follow(user_id)
     relationships.find_or_create_by(followed_id: user_id)
