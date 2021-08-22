@@ -2,7 +2,7 @@ class Public::PostArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @post_articles = PostArticle.all.reverse_order
+    @post_articles = PostArticle.page(params[:page]).reverse_order
     @post_article = PostArticle.new
     @post_comment = PostComment.new
   end
@@ -15,7 +15,7 @@ class Public::PostArticlesController < ApplicationController
 
       redirect_to post_articles_path
     else
-      @post_articles = PostArticle.all.reverse_order
+      @post_articles = PostArticle.page(params[:page]).reverse_order
       @post_article = PostArticle.new
       @post_comment = PostComment.new
 
