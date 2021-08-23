@@ -17,7 +17,7 @@
  @import "bootstrap";
 
  .top-heading{
-  background-image: url("top1.jpg");
+  background-image: image-url("top1.jpg");
   height: 250px;
   background-size: cover;
   background-position: center;
@@ -25,7 +25,7 @@
  }
 
  .about-box{
-   background-image: url("about.jpg");
+   background-image: image-url("about.jpg");
    height: 300px;
    background-size: cover;
    background-position: bottom;
@@ -45,7 +45,7 @@
  }
 
  .type-1{
-  background-image: url("natural.jpg");
+  background-image: image-url("natural.jpg");
   height: 250px;
   width: 200px;
   background-size:cover;
@@ -54,7 +54,7 @@
  }
 
  .type-2{
-  background-image: url("washed.jpg");
+  background-image: image-url("washed.jpg");
   height: 250px;
   width: 200px;
   background-size:cover;
@@ -62,7 +62,7 @@
   opacity: 0.8;
  }
  .type-3{
-  background-image: url("SHB.jpg");
+  background-image: image-url("SHB.jpg");
   height: 250px;
   width: 200px;
   background-size:cover;
@@ -71,7 +71,7 @@
  }
 
  .type-4{
-  background-image: url("sumatora.jpg");
+  background-image: image-url("sumatora.jpg");
   height: 250px;
   width: 200px;
   background-size:cover;
