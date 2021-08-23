@@ -1,6 +1,5 @@
 # README
 
-
 # CoffeeBeats
 
 ## サイト概要
