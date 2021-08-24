@@ -49,5 +49,5 @@ https://docs.google.com/spreadsheets/d/1I0dXTtOsWjHP1REY3urWE5_80K2aUvTpKhlXTp12
 - IDE：Cloud9
 
 ## 使用素材
--Canva: https://www.canva.com/
--Pixabay: https://pixabay.com/ja/
+- Canva: https://www.canva.com/
+- Pixabay: https://pixabay.com/ja/
