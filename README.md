@@ -28,15 +28,15 @@
 
 ## 設計書
 要件定義<br>
-https://drive.google.com/file/d/1wAzFLGZkb8UbULPVQN4GbUUW221ICuq_/view?usp=sharing  <br>
+https://docs.google.com/document/d/1rTftlgkT31lesfRdljjHrJR0vKIX20OX/edit  <br>
 ER図<br>
 https://drive.google.com/drive/u/0/folders/1FZV0z8J6-tlHou3EZU8hblXXUiLcxdqR?lfhs=2  <br>
 ワイヤーフレーム<br>
 https://drive.google.com/file/d/1bx7GLvAAcngZQcj0YrEAsG54L9BkEnJv/view?usp=sharing  <br>
 テーブル定義書<br>
-https://drive.google.com/file/d/12XvkvVPXo0wyXrbDkag1w4jmLTTlnzDJ/view?usp=sharing  <br>
+https://docs.google.com/spreadsheets/d/1XZBZ5tZJAjVFyjGAshbyufSyVl844Bs8/edit#gid=1892416158  <br>
 詳細設計書<br>
-https://drive.google.com/file/d/1YqUReqUWpgPQwWOGVw8MO5extb0pcrBY/view?usp=sharing <br>
+https://docs.google.com/spreadsheets/d/1yIGqkLE4cwTFFyFzLMpI6Y4HrZfD8wCR/edit#gid=424326746<br>
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1I0dXTtOsWjHP1REY3urWE5_80K2aUvTpKhlXTp1297k/edit?usp=sharing
