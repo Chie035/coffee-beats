@@ -1,8 +1,8 @@
 <div class="container sm-12 md-8 lg-5 px-5 px-sm-0">
 
     <div class="row mt-5">
-        <div class="top-heading mx-auto">
-            <div class="top-text-box text-light mt-4 p-2">
+        <div class="top-heading col-md-8 mx-auto">
+            <div class="text-light mt-4 p-2">
                 <h1>Welcom to <strong>CoffeeBeats</strong>!</h1>
                 <h4 class="mt-4">コーヒーで、心躍る。</h4>
                 <h4>コーヒー好きのコーヒー好きによるコーヒー好きのためのサイト</h4>
@@ -21,18 +21,18 @@
     </div>
 
     <div class="row mt-5">
-        <div class="contents-box mx-auto text-center flex">
-                <div class="leaning-box d-inline-block">
+        <div class="contents-box d-flex justify-content-center flex-wrap mx-auto">
+                <div class="leaning-box">
                     <%= link_to articles_path do%>
                     <%= image_tag("leaning.jpg") %>
                     <% end %>
                 </div>
-                <div class="communicate-box d-inline-block ml-3">
+                <div class="communicate-box mx-3">
                     <%= link_to post_articles_path do %>
                     <%= image_tag("communicate.jpg") %>
                     <% end %>
                 </div>
-                <div class="opinion-box d-inline-block ml-3">
+                <div class="opinion-box mx-3">
                     <%= link_to start_questions_path do %>
                     <%= image_tag("opinion.jpg") %>
                     <% end %>
